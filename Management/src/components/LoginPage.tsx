@@ -74,7 +74,7 @@ const LoginPage = ({ onLoginSuccess }: LoginPageProps) => {
 
         // Navigate after a short delay to show toast
         setTimeout(() => {
-          navigate("/home");
+        navigate("/home", { state: { showTip: true } });
         }, 1000);
       } else {
         setError("Invalid username or password. Please try again.");
@@ -205,7 +205,9 @@ const LoginPage = ({ onLoginSuccess }: LoginPageProps) => {
               />
             </div>
           </div>
-
+   <label className="block text-white text-sm font-semibold">
+              Password
+            </label>
           <div className="relative">
             {/* Lock Icon */}
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

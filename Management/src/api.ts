@@ -1,6 +1,6 @@
 import {  type AccountBalance, type PersonTransaction, type TradeEntry, type TradingNote, } from '../src/Parameters';
 
-const API_BASE_URL = 'http://localhost:9090/';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:9090/';
 
 class ApiService {
  private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
